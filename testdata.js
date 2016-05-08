@@ -26,9 +26,6 @@ var data = { etries: [
 ]};
 
 Handlebars.registerHelper('tablecontent', function() {
-	
-  /*var id = Handlebars.escapeExpression(this.id),
-      message = Handlebars.escapeExpression(this.description); */
 
     var id = this.id,
       	message = this.description;
