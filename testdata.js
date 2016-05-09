@@ -27,11 +27,11 @@ var data = { entries: [
 
 Handlebars.registerHelper('json', function(posts) {
 
-	return JSON.stringify(posts);
+	return JSON.stringify(posts, null, '\t');
 
 });
 
-Handlebars.registerHelper('tablecontent', function(posts) {   console.log(arguments[0].data.index);
+Handlebars.registerHelper('tablecontent', function(posts) { 
 
     var id = this.id,
       	message = this.description;
