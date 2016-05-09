@@ -31,17 +31,14 @@ Handlebars.registerHelper('json', function(posts) {
 
 });
 
-Handlebars.registerHelper('tablecontent', function(posts) { 
-
-    var id = this.id,
-      	message = this.description;
+Handlebars.registerHelper('tablecontent', function(post, options) {  
 
   	return new Handlebars.SafeString(
-    	"<div class="+ ( arguments[0].data.index % 2 ? 'odd' : 'even')+"><p><strong>"+id + " : </strong>" + message + "</p></div>"
+    	"<div class="+ ( options.data.index % 2 ? 'odd' : 'even')+">"+options.fn(this)+"</div>"
     );
 });
 
-var template2 = Handlebars.compile( $('#template2').html() );
+var template2 = Handlebars.compile( $('#template2').html());
 $('.code').append( template2(data) );
 
 var template = Handlebars.compile( $('#template').html() );

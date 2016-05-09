@@ -30,7 +30,9 @@
 <div class="updates">
 	<script id="template" type="text/x-handlebars-template">
 		{{#each entries}}
-				{{tablecontent}}
+			{{#tablecontent this}}
+				<p><strong>{{id}}</strong> : {{description}}</p>
+			{{/tablecontent}}
 		{{/each}}
 	</script>
 </div>
