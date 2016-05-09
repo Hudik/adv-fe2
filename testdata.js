@@ -1,4 +1,4 @@
-var data = { etries: [
+var data = { entries: [
 	{
 		"imgUrl":""
 		,"likeCount": 0
@@ -25,15 +25,24 @@ var data = { etries: [
 	},
 ]};
 
-Handlebars.registerHelper('tablecontent', function() {
+Handlebars.registerHelper('json', function(posts) {
+
+	return JSON.stringify(posts);
+
+});
+
+Handlebars.registerHelper('tablecontent', function(posts) {   console.log(arguments[0].data.index);
 
     var id = this.id,
       	message = this.description;
 
   	return new Handlebars.SafeString(
-    	"<p><strong>"+id + " : </strong>" + message + "</p>"
+    	"<div class="+ ( arguments[0].data.index % 2 ? 'odd' : 'even')+"><p><strong>"+id + " : </strong>" + message + "</p></div>"
     );
 });
+
+var template2 = Handlebars.compile( $('#template2').html() );
+$('.code').append( template2(data) );
 
 var template = Handlebars.compile( $('#template').html() );
 $('.updates').append( template(data) ); 

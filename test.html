@@ -10,7 +10,7 @@
 	.updates > div{
 		padding: 6px;
 	}
-	.updates > div:nth-child(odd) {
+	.updates > .odd {
 		background: #dddddd;
 	}
 </style>
@@ -18,14 +18,21 @@
 </head>
 <body>
 
+<p>
+	<code class="code">
+		<script id="template2" type="text/x-handlebars-template">
+			{{#json entries}}
+			{{/json}}
+		</script>
+	</code>
+</p>
+
 <div class="updates">
-   <script id="template" type="text/x-handlebars-template">
-   		{{#each etries}}
-	      <div>
-	      	{{tablecontent}}
-	      </div>
-	    {{/each}}  
-   </script>
+	<script id="template" type="text/x-handlebars-template">
+		{{#each entries}}
+				{{tablecontent}}
+		{{/each}}
+	</script>
 </div>
 
 <script type="text/javascript" src="testdata.js"></script>
