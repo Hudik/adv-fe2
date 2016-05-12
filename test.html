@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Handlebars test Page</title>
+
+<script type="text/javascript" src="client_src/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="client_src/handlebars/handlebars.js"></script>
+
+<style type="text/css">
+	.updates > div{
+		padding: 6px;
+	}
+	.updates > .even {
+		background: #dddddd;
+	}
+</style>
+
+</head>
+<body>
+
+<p>
+	<pre class="code">
+		<script id="template2" type="text/x-handlebars-template">
+			{{#json entries}}
+			{{/json}}
+		</script>
+	</pre>
+</p>
+
+<div class="updates">
+	<script id="template" type="text/x-handlebars-template">
+		{{#each entries}}
+			{{#tablecontent this}}
+				<p><strong>{{id}}</strong> : {{description}}</p>
+			{{/tablecontent}}
+		{{/each}}
+	</script>
+</div>
+
+<script type="text/javascript" src="testdata.js"></script>
+
+</body>
+</html>
